@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexaSkillsKit.Lib", "AlexaSkillsKit.Lib\AlexaSkillsKit.Lib.csproj", "{55400FE4-7B4F-45BE-B5E7-316D9DE97446}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexaSkillsKit.Sample", "AlexaSkillsKit.Sample\AlexaSkillsKit.Sample.csproj", "{9FDEF793-5832-4D37-B0D5-62C55AB1C12E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexaSkillsKit.Tests", "AlexaSkillsKit.Tests\AlexaSkillsKit.Tests.csproj", "{D0125A95-FD63-4A33-9220-206D4A1A14F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{55400FE4-7B4F-45BE-B5E7-316D9DE97446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55400FE4-7B4F-45BE-B5E7-316D9DE97446}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55400FE4-7B4F-45BE-B5E7-316D9DE97446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FDEF793-5832-4D37-B0D5-62C55AB1C12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDEF793-5832-4D37-B0D5-62C55AB1C12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDEF793-5832-4D37-B0D5-62C55AB1C12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDEF793-5832-4D37-B0D5-62C55AB1C12E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0125A95-FD63-4A33-9220-206D4A1A14F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0125A95-FD63-4A33-9220-206D4A1A14F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0125A95-FD63-4A33-9220-206D4A1A14F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0125A95-FD63-4A33-9220-206D4A1A14F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
