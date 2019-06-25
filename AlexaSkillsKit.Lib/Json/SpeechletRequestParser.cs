@@ -6,10 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AlexaSkillsKit.Json
-{
-    public class SpeechletRequestParser
-    {
+namespace AlexaSkillsKit.Json {
+    public class SpeechletRequestParser {
         private IDictionary<string, Func<string, JObject, SpeechletRequest>> resolvers
             = new Dictionary<string, Func<string, JObject, SpeechletRequest>>();
 

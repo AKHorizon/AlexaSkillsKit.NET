@@ -1,12 +1,10 @@
 ﻿// Copyright 2018 Stefan Negritoiu (FreeBusy) and contributors. See LICENSE file for more information.
 
-namespace AlexaSkillsKit.Interfaces.Display
-{
+namespace AlexaSkillsKit.Interfaces.Display {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/display-interface-reference.html#image-object-specifications
     /// </summary>
-    public class DisplayImageSource
-    {
+    public class DisplayImageSource {
         public virtual string Url {
             get;
             set;
@@ -27,8 +25,7 @@ namespace AlexaSkillsKit.Interfaces.Display
             set;
         }
 
-        public enum ImageSizeEnum
-        {
+        public enum ImageSizeEnum {
             X_SMALL,
             SMALL,
             MEDIUM,

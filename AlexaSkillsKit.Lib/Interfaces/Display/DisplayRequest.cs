@@ -3,13 +3,11 @@
 using AlexaSkillsKit.Speechlet;
 using Newtonsoft.Json.Linq;
 
-namespace AlexaSkillsKit.Interfaces.Display
-{
+namespace AlexaSkillsKit.Interfaces.Display {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/display-interface-reference.html#touch-selection-events
     /// </summary>
-    public class DisplayRequest : ExtendedSpeechletRequest
-    {
+    public class DisplayRequest : ExtendedSpeechletRequest {
         public static readonly string TypeName = "Display";
 
         public DisplayRequest(string subtype, JObject json) : base(TypeName, subtype, json) {

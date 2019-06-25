@@ -1,13 +1,11 @@
 ﻿// Copyright 2018 Stefan Negritoiu (FreeBusy) and contributors. See LICENSE file for more information.
 
+using AlexaSkillsKit.Json;
 using System;
 using System.Diagnostics;
-using AlexaSkillsKit.Json;
 
-namespace AlexaSkillsKit.Authentication
-{
-    public class SpeechletRequestTimestampVerifier
-    {
+namespace AlexaSkillsKit.Authentication {
+    public class SpeechletRequestTimestampVerifier {
         /// <summary>
         /// Verifies request timestamp
         /// </summary>

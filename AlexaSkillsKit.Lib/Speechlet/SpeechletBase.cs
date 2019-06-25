@@ -7,10 +7,8 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace AlexaSkillsKit.Speechlet
-{
-    public class SpeechletBase : ISpeechletBase
-    {
+namespace AlexaSkillsKit.Speechlet {
+    public class SpeechletBase : ISpeechletBase {
         public SpeechletService Service { get; }
 
         protected SpeechletBase() {
@@ -68,7 +66,7 @@ namespace AlexaSkillsKit.Speechlet
         /// <returns>true if request processing should continue, otherwise false</returns>
         public virtual bool OnRequestValidation(
             SpeechletRequestValidationResult result, DateTime referenceTimeUtc, SpeechletRequestEnvelope requestEnvelope) {
-            
+
             return result == SpeechletRequestValidationResult.OK;
         }
     }

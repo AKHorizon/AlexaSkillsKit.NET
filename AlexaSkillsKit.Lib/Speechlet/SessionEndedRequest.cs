@@ -3,10 +3,8 @@
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace AlexaSkillsKit.Speechlet
-{
-    public class SessionEndedRequest : SpeechletRequest
-    {
+namespace AlexaSkillsKit.Speechlet {
+    public class SessionEndedRequest : SpeechletRequest {
         public SessionEndedRequest(JObject json) : base(json) {
 
             ReasonEnum reason = ReasonEnum.UNKNOWN;
@@ -25,8 +23,7 @@ namespace AlexaSkillsKit.Speechlet
             private set;
         }
 
-        public enum ReasonEnum
-        {
+        public enum ReasonEnum {
             NONE = 0, // default in case parsing fails (backwards compatibility)
             UNKNOWN = 0, // default in case parsing fails
             ERROR,

@@ -4,10 +4,8 @@ using AlexaSkillsKit.Interfaces.AudioPlayer;
 using AlexaSkillsKit.Interfaces.Display;
 using AlexaSkillsKit.Speechlet;
 
-namespace AlexaSkillsKit.Json
-{
-    public static class SpeechletRequestParserExtensions
-    {
+namespace AlexaSkillsKit.Json {
+    public static class SpeechletRequestParserExtensions {
         public static void AddStandard(this SpeechletRequestParser parser) {
             parser.AddInterface(string.Empty, (subtype, json) => {
                 switch (subtype) {

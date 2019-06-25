@@ -3,13 +3,11 @@
 using AlexaSkillsKit.Speechlet;
 using Newtonsoft.Json.Linq;
 
-namespace AlexaSkillsKit.Interfaces.Display
-{
+namespace AlexaSkillsKit.Interfaces.Display {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/display-interface-reference.html#determining-the-version-of-the-supported-display
     /// </summary>
-    public class DisplayInterface: ISpeechletInterface
-    {
+    public class DisplayInterface : ISpeechletInterface {
         private const string DefaultTemplateVersion = "1";
         private const string DefaultMarkupVersion = "1";
 

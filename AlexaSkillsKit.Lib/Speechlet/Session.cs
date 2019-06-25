@@ -1,13 +1,11 @@
 ﻿// Copyright 2018 Stefan Negritoiu (FreeBusy) and contributors. See LICENSE file for more information.
 
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
 
-namespace AlexaSkillsKit.Speechlet
-{
-    public class Session
-    {
+namespace AlexaSkillsKit.Speechlet {
+    public class Session {
         public const string INTENT_SEQUENCE = "intentSequence";
         public const string SEPARATOR = ";";
 
@@ -64,7 +62,7 @@ namespace AlexaSkillsKit.Speechlet
         public virtual string[] IntentSequence {
             get {
                 return !Attributes.ContainsKey(INTENT_SEQUENCE) || String.IsNullOrEmpty(Attributes[INTENT_SEQUENCE]) ?
-                    new string[0] : 
+                    new string[0] :
                     Attributes[INTENT_SEQUENCE].Split(
                         new string[1] { SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
             }

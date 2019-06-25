@@ -4,10 +4,8 @@ using AlexaSkillsKit.Speechlet;
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace AlexaSkillsKit.Interfaces.AudioPlayer
-{
-    public class AudioPlayerState : ISpeechletInterfaceState
-    {
+namespace AlexaSkillsKit.Interfaces.AudioPlayer {
+    public class AudioPlayerState : ISpeechletInterfaceState {
         public static AudioPlayerState FromJson(JObject json) {
             if (json == null) return null;
 
@@ -35,8 +33,7 @@ namespace AlexaSkillsKit.Interfaces.AudioPlayer
             private set;
         }
 
-        public enum PlayerActivityEnum
-        {
+        public enum PlayerActivityEnum {
             NONE = 0, // default in case parsing fails
             PLAYING,
             PAUSED,

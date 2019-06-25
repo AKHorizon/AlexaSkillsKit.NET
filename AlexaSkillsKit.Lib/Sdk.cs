@@ -1,12 +1,9 @@
 ﻿// Copyright 2018 Stefan Negritoiu (FreeBusy) and contributors. See LICENSE file for more information.
 
-using System;
 using Newtonsoft.Json;
 
-namespace AlexaSkillsKit
-{
-    public static class Sdk
-    {
+namespace AlexaSkillsKit {
+    public static class Sdk {
         public const string VERSION = "1.0";
         public const string CHARACTER_ENCODING = "UTF-8";
         public const string ECHO_API_DOMAIN_NAME = "echo-api.amazon.com";

@@ -3,13 +3,11 @@
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace AlexaSkillsKit.Speechlet
-{
+namespace AlexaSkillsKit.Speechlet {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/audioplayer-interface-reference.html#playbackfailed
     /// </summary>
-    public class PlaybackState
-    {
+    public class PlaybackState {
         public static PlaybackState FromJson(JObject json) {
             if (json == null) return null;
 
@@ -37,8 +35,7 @@ namespace AlexaSkillsKit.Speechlet
             private set;
         }
 
-        public enum PlayerActivityEnum
-        {
+        public enum PlayerActivityEnum {
             NONE = 0, // default in case parsing fails
             PLAYING,
             PAUSED,

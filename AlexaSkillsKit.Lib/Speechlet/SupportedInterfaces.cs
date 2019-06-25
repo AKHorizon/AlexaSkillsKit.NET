@@ -1,19 +1,17 @@
 ﻿// Copyright 2018 Stefan Negritoiu (FreeBusy) and contributors. See LICENSE file for more information.
 
-using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
-using System.Linq;
-using AlexaSkillsKit.Interfaces.Display;
 using AlexaSkillsKit.Interfaces.AudioPlayer;
+using AlexaSkillsKit.Interfaces.Display;
 using AlexaSkillsKit.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace AlexaSkillsKit.Speechlet
-{
+namespace AlexaSkillsKit.Speechlet {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/request-and-response-json-reference.html#system-object
     /// </summary>
-    public class SupportedInterfaces : Dictionary<string, ISpeechletInterface>
-    {
+    public class SupportedInterfaces : Dictionary<string, ISpeechletInterface> {
         /// <summary>
         /// Register supported interfaces for deserialization
         /// </summary>

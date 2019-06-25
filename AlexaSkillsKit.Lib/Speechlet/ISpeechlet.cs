@@ -2,11 +2,9 @@
 
 using System;
 
-namespace AlexaSkillsKit.Speechlet
-{
+namespace AlexaSkillsKit.Speechlet {
     [Obsolete("Does not support context object. Implement ISpeechletWithContext instead")]
-    public interface ISpeechlet : ISpeechletBase
-    {
+    public interface ISpeechlet : ISpeechletBase {
         SpeechletResponse OnIntent(IntentRequest intentRequest, Session session);
         SpeechletResponse OnLaunch(LaunchRequest launchRequest, Session session);
         void OnSessionStarted(SessionStartedRequest sessionStartedRequest, Session session);

@@ -3,10 +3,8 @@
 using AlexaSkillsKit.Authentication;
 using System;
 
-namespace AlexaSkillsKit.Speechlet
-{
-    public class SpeechletValidationException : SpeechletException
-    {
+namespace AlexaSkillsKit.Speechlet {
+    public class SpeechletValidationException : SpeechletException {
         public SpeechletRequestValidationResult ValidationResult { get; }
 
         public SpeechletValidationException(SpeechletRequestValidationResult validationResult) : base() {

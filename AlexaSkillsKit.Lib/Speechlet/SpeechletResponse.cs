@@ -3,13 +3,11 @@
 using AlexaSkillsKit.UI;
 using System.Collections.Generic;
 
-namespace AlexaSkillsKit.Speechlet
-{
+namespace AlexaSkillsKit.Speechlet {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/request-and-response-json-reference.html#response-object
     /// </summary>
-    public class SpeechletResponse : ISpeechletResponse
-    {
+    public class SpeechletResponse : ISpeechletResponse {
         /// <summary>
         /// Set default ShouldEndSession value to false for the sake of backwards compatibility
         /// </summary>

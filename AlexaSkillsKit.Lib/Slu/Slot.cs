@@ -4,13 +4,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace AlexaSkillsKit.Slu
-{
+namespace AlexaSkillsKit.Slu {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/request-types-reference.html#slot-object
     /// </summary>
-    public class Slot
-    {
+    public class Slot {
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +26,7 @@ namespace AlexaSkillsKit.Slu
                 Resolutions = Resolutions.FromJson(json.Value<JObject>("resolutions"))
             };
         }
-        
+
         public virtual string Name {
             get;
             set;

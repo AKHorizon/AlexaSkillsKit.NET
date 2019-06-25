@@ -4,10 +4,8 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AlexaSkillsKit.Slu
-{
-    public class ResolutionsPerAuthority
-    {
+namespace AlexaSkillsKit.Slu {
+    public class ResolutionsPerAuthority {
         public static ResolutionsPerAuthority FromJson(JObject json) {
             if (json == null) return null;
 

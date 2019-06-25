@@ -2,13 +2,11 @@
 
 using Newtonsoft.Json.Linq;
 
-namespace AlexaSkillsKit.Speechlet
-{
+namespace AlexaSkillsKit.Speechlet {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/request-and-response-json-reference.html#system-object
     /// </summary>
-    public class Device
-    {
+    public class Device {
         public static Device FromJson(JObject json) {
             if (json == null) return null;
 

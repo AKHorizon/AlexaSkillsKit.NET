@@ -2,13 +2,11 @@
 
 using AlexaSkillsKit.Speechlet;
 
-namespace AlexaSkillsKit.Interfaces.Display.Directives
-{
+namespace AlexaSkillsKit.Interfaces.Display.Directives {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/display-interface-reference.html#hint-directive
     /// </summary>
-    public class HintDirective : Directive
-    {
+    public class HintDirective : Directive {
         public HintDirective() : base("Hint") {
 
         }

@@ -3,13 +3,11 @@
 using AlexaSkillsKit.Interfaces.AudioPlayer;
 using Newtonsoft.Json.Linq;
 
-namespace AlexaSkillsKit.Speechlet
-{
+namespace AlexaSkillsKit.Speechlet {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/request-and-response-json-reference.html#context-object
     /// </summary>
-    public class Context
-    {
+    public class Context {
         public static Context FromJson(JObject json) {
             if (json == null) return null;
 

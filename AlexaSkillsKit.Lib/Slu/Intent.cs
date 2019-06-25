@@ -1,17 +1,15 @@
 ﻿// Copyright 2018 Stefan Negritoiu (FreeBusy) and contributors. See LICENSE file for more information.
 
-using System.Collections.Generic;
-using System.Linq;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace AlexaSkillsKit.Slu
-{
+namespace AlexaSkillsKit.Slu {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/request-types-reference.html#intent-object
     /// </summary>
-    public class Intent
-    {
+    public class Intent {
         /// <summary>
         /// 
         /// </summary>

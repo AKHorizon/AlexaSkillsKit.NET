@@ -4,10 +4,8 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 
-namespace AlexaSkillsKit.Json
-{
-    public class Deserializer<T>
-    {
+namespace AlexaSkillsKit.Json {
+    public class Deserializer<T> {
         private static IDictionary<string, Func<JObject, T>> deserializers = new Dictionary<string, Func<JObject, T>>();
 
         public static void RegisterDeserializer(string name, Func<JObject, T> fromJson) {

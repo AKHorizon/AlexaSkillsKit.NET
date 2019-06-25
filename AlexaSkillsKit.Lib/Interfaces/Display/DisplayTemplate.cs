@@ -2,13 +2,11 @@
 
 using System.Collections.Generic;
 
-namespace AlexaSkillsKit.Interfaces.Display
-{
+namespace AlexaSkillsKit.Interfaces.Display {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/display-interface-reference.html#display-template-elements
     /// </summary>
-    public class DisplayTemplate
-    {
+    public class DisplayTemplate {
         public virtual string Type {
             get;
             set;
@@ -49,8 +47,7 @@ namespace AlexaSkillsKit.Interfaces.Display
             set;
         }
 
-        public enum ButtonStateEnum
-        {
+        public enum ButtonStateEnum {
             HIDDEN,
             VISIBLE
         }

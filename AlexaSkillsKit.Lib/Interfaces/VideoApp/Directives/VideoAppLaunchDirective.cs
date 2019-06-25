@@ -2,13 +2,11 @@
 
 using AlexaSkillsKit.Speechlet;
 
-namespace AlexaSkillsKit.Interfaces.VideoApp.Directives
-{
+namespace AlexaSkillsKit.Interfaces.VideoApp.Directives {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/videoapp-interface-reference.html#videoapp-directives
     /// </summary>
-    public class VideoAppLaunchDirective : Directive
-    {
+    public class VideoAppLaunchDirective : Directive {
         public VideoAppLaunchDirective() : base("VideoApp.Launch") {
 
         }

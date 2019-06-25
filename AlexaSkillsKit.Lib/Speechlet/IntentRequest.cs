@@ -4,10 +4,8 @@ using AlexaSkillsKit.Slu;
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace AlexaSkillsKit.Speechlet
-{
-    public class IntentRequest : SpeechletRequest
-    {
+namespace AlexaSkillsKit.Speechlet {
+    public class IntentRequest : SpeechletRequest {
         public IntentRequest(JObject json) : base(json) {
             Intent = Intent.FromJson(json.Value<JObject>("intent"));
 
@@ -26,8 +24,7 @@ namespace AlexaSkillsKit.Speechlet
             private set;
         }
 
-        public enum DialogStateEnum
-        {
+        public enum DialogStateEnum {
             UNKNOWN = 0, // default in case parsing fails
             STARTED,
             IN_PROGRESS,

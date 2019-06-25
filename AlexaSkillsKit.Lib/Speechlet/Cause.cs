@@ -2,13 +2,11 @@
 
 using Newtonsoft.Json.Linq;
 
-namespace AlexaSkillsKit.Speechlet
-{
+namespace AlexaSkillsKit.Speechlet {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/audioplayer-interface-reference.html#system-exceptionencountered
     /// </summary>
-    public class Cause
-    {
+    public class Cause {
         public static Cause FromJson(JObject json) {
             if (json == null) return null;
 

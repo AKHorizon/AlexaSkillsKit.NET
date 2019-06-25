@@ -2,10 +2,8 @@
 
 using Newtonsoft.Json.Linq;
 
-namespace AlexaSkillsKit.Speechlet
-{
-    public class LaunchRequest : SpeechletRequest
-    {
+namespace AlexaSkillsKit.Speechlet {
+    public class LaunchRequest : SpeechletRequest {
         public LaunchRequest(JObject json) : base(json) {
         }
     }

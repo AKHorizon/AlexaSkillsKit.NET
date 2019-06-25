@@ -4,13 +4,11 @@ using AlexaSkillsKit.Interfaces.AudioPlayer.Directives;
 using AlexaSkillsKit.Speechlet;
 using System.Collections.Generic;
 
-namespace AlexaSkillsKit.Interfaces.AudioPlayer
-{
+namespace AlexaSkillsKit.Interfaces.AudioPlayer {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/request-and-response-json-reference.html#response-to-audioplayer-or-playbackcontroller-example-directives-only
     /// </summary>
-    public class AudioPlayerResponse : ISpeechletResponse
-    {
+    public class AudioPlayerResponse : ISpeechletResponse {
         public virtual IEnumerable<AudioPlayerDirective> Directives {
             get;
             set;

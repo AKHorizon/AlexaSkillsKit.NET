@@ -2,11 +2,9 @@
 
 using System;
 
-namespace AlexaSkillsKit.Authentication
-{
+namespace AlexaSkillsKit.Authentication {
     [Flags]
-    public enum SpeechletRequestValidationResult
-    {
+    public enum SpeechletRequestValidationResult {
         OK = 0,
         NoSignatureHeader = 1,
         NoCertHeader = 2,

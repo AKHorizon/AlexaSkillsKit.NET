@@ -13,10 +13,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlexaSkillsKit.Speechlet
-{
-    public class SpeechletService
-    {
+namespace AlexaSkillsKit.Speechlet {
+    public class SpeechletService {
         private ISpeechletBase speechlet;
 
         private IDictionary<string, Func<ExtendedSpeechletRequest, Context, Task<ISpeechletResponse>>> handlers
@@ -88,8 +86,7 @@ namespace AlexaSkillsKit.Speechlet
                     new HttpResponseMessage(HttpStatusCode.OK) {
                         Content = new StringContent(json, Encoding.UTF8, "application/json")
                     };
-            }
-            catch (SpeechletValidationException ex) {
+            } catch (SpeechletValidationException ex) {
                 return new HttpResponseMessage(HttpStatusCode.BadRequest) {
                     ReasonPhrase = ex.ValidationResult.ToString()
                 };
@@ -120,12 +117,10 @@ namespace AlexaSkillsKit.Speechlet
             SpeechletRequestEnvelope result = null;
             try {
                 result = SpeechletRequestEnvelope.FromJson(content);
-            }
-            catch (SpeechletValidationException ex) {
+            } catch (SpeechletValidationException ex) {
                 validationResult |= ex.ValidationResult;
-            }
-            catch (Exception ex)
-            when (ex is JsonReaderException || ex is InvalidCastException || ex is FormatException) {
+            } catch (Exception ex)
+              when (ex is JsonReaderException || ex is InvalidCastException || ex is FormatException) {
                 validationResult |= SpeechletRequestValidationResult.InvalidJson;
             }
 
@@ -187,8 +182,8 @@ namespace AlexaSkillsKit.Speechlet
         /// </summary>
         private async Task<ISpeechletResponse> HandleStandardRequestAsync(
             SpeechletRequest request, Session session, Context context) {
-            
-            #pragma warning disable 612, 618
+
+#pragma warning disable 612, 618
             if (session != null) {
                 // Do session management prior to calling OnSessionStarted and OnIntentAsync 
                 // to allow dev to change session values if behavior is not desired
@@ -206,9 +201,9 @@ namespace AlexaSkillsKit.Speechlet
                         await (speechlet as ISpeechletAsync).OnSessionStartedAsync(sessionStartedRequest, session);
                 }
             }
-            #pragma warning restore 612, 618
+#pragma warning restore 612, 618
 
-            #pragma warning disable 612, 618
+#pragma warning disable 612, 618
             if (request is LaunchRequest) {
                 // process launch request
                 if (speechlet is ISpeechletWithContext)
@@ -219,8 +214,7 @@ namespace AlexaSkillsKit.Speechlet
                     return (speechlet as ISpeechlet).OnLaunch(request as LaunchRequest, session);
                 else if (speechlet is ISpeechletAsync)
                     return await (speechlet as ISpeechletAsync).OnLaunchAsync(request as LaunchRequest, session);
-            }
-            else if (request is IntentRequest) {
+            } else if (request is IntentRequest) {
                 // process intent request
                 if (speechlet is ISpeechletWithContext)
                     return (speechlet as ISpeechletWithContext).OnIntent(request as IntentRequest, session, context);
@@ -230,8 +224,7 @@ namespace AlexaSkillsKit.Speechlet
                     return (speechlet as ISpeechlet).OnIntent(request as IntentRequest, session);
                 else if (speechlet is ISpeechletAsync)
                     return await (speechlet as ISpeechletAsync).OnIntentAsync(request as IntentRequest, session);
-            }
-            else if (request is SessionEndedRequest) {
+            } else if (request is SessionEndedRequest) {
                 // process session ended request
                 if (speechlet is ISpeechletWithContext)
                     (speechlet as ISpeechletWithContext).OnSessionEnded(request as SessionEndedRequest, session, context);
@@ -242,7 +235,7 @@ namespace AlexaSkillsKit.Speechlet
                 else if (speechlet is ISpeechletAsync)
                     await (speechlet as ISpeechletAsync).OnSessionEndedAsync(request as SessionEndedRequest, session);
             }
-            #pragma warning restore 612, 618
+#pragma warning restore 612, 618
 
             return null;
         }
@@ -265,14 +258,12 @@ namespace AlexaSkillsKit.Speechlet
 
             if (session.IsNew) {
                 session.Attributes[Session.INTENT_SEQUENCE] = request.Intent.Name;
-            }
-            else {
+            } else {
                 // if the session was started as a result of a launch request 
                 // a first intent isn't yet set, so set it to the current intent
                 if (!session.Attributes.ContainsKey(Session.INTENT_SEQUENCE)) {
                     session.Attributes[Session.INTENT_SEQUENCE] = request.Intent.Name;
-                }
-                else {
+                } else {
                     session.Attributes[Session.INTENT_SEQUENCE] += Session.SEPARATOR + request.Intent.Name;
                 }
             }

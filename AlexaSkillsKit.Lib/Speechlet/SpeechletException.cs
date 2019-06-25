@@ -2,10 +2,8 @@
 
 using System;
 
-namespace AlexaSkillsKit.Speechlet
-{
-    public class SpeechletException : Exception
-    {
+namespace AlexaSkillsKit.Speechlet {
+    public class SpeechletException : Exception {
         public SpeechletException() : base() {
 
         }

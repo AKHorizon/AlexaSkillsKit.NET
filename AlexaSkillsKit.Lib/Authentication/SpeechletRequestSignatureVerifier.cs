@@ -1,23 +1,17 @@
 ﻿// Copyright 2018 Stefan Negritoiu (FreeBusy) and contributors. See LICENSE file for more information.
 
+using Org.BouncyCastle.Security.Certificates;
+using Org.BouncyCastle.X509;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Runtime.Caching;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Org.BouncyCastle.X509;
-using Org.BouncyCastle.Security.Certificates;
 
-namespace AlexaSkillsKit.Authentication
-{
-    public class SpeechletRequestSignatureVerifier
-    {
+namespace AlexaSkillsKit.Authentication {
+    public class SpeechletRequestSignatureVerifier {
         private static Func<string, string> _getCertCacheKey = (string url) => string.Format("{0}_{1}", Sdk.SIGNATURE_CERT_URL_REQUEST_HEADER, url);
 
         private static CacheItemPolicy _policy = new CacheItemPolicy {
@@ -114,11 +108,9 @@ namespace AlexaSkillsKit.Authentication
             try {
                 cert.CheckValidity();
                 if (!CheckCertSubjectNames(cert)) return null;
-            }
-            catch (CertificateExpiredException) {
+            } catch (CertificateExpiredException) {
                 return null;
-            }
-            catch (CertificateNotYetValidException) {
+            } catch (CertificateNotYetValidException) {
                 return null;
             }
 
@@ -142,13 +134,11 @@ namespace AlexaSkillsKit.Authentication
             var pemReader = new Org.BouncyCastle.OpenSsl.PemReader(new StringReader(content));
             var cert = (X509Certificate)pemReader.ReadObject();
             try {
-                cert.CheckValidity(); 
+                cert.CheckValidity();
                 if (!CheckCertSubjectNames(cert)) return null;
-            }
-            catch (CertificateExpiredException) {
+            } catch (CertificateExpiredException) {
                 return null;
-            }
-            catch (CertificateNotYetValidException) {
+            } catch (CertificateNotYetValidException) {
                 return null;
             }
 
@@ -165,15 +155,14 @@ namespace AlexaSkillsKit.Authentication
             byte[] expectedSig = null;
             try {
                 expectedSig = Convert.FromBase64String(expectedSignature);
-            }
-            catch (FormatException) {
+            } catch (FormatException) {
                 return false;
             }
 
             var publicKey = (Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters)cert.GetPublicKey();
             var signer = Org.BouncyCastle.Security.SignerUtilities.GetSigner(Sdk.SIGNATURE_ALGORITHM);
             signer.Init(false, publicKey);
-            signer.BlockUpdate(serializedSpeechletRequest, 0, serializedSpeechletRequest.Length);            
+            signer.BlockUpdate(serializedSpeechletRequest, 0, serializedSpeechletRequest.Length);
 
             return signer.VerifySignature(expectedSig);
         }
@@ -185,7 +174,7 @@ namespace AlexaSkillsKit.Authentication
         private static bool CheckCertSubjectNames(X509Certificate cert) {
             bool found = false;
             ArrayList subjectNamesList = (ArrayList)cert.GetSubjectAlternativeNames();
-            for (int i=0; i < subjectNamesList.Count; i++) {
+            for (int i = 0; i < subjectNamesList.Count; i++) {
                 ArrayList subjectNames = (ArrayList)subjectNamesList[i];
                 for (int j = 0; j < subjectNames.Count; j++) {
                     if (subjectNames[j] is String && subjectNames[j].Equals(Sdk.ECHO_API_DOMAIN_NAME)) {

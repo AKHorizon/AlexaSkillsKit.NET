@@ -4,13 +4,11 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AlexaSkillsKit.Slu
-{
+namespace AlexaSkillsKit.Slu {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/request-types-reference.html#resolutions-object
     /// </summary>
-    public class Resolutions
-    {
+    public class Resolutions {
         public static Resolutions FromJson(JObject json) {
             if (json == null) return null;
 

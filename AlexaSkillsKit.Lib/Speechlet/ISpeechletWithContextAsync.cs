@@ -2,10 +2,8 @@
 
 using System.Threading.Tasks;
 
-namespace AlexaSkillsKit.Speechlet
-{
-    public interface ISpeechletWithContextAsync
-    {
+namespace AlexaSkillsKit.Speechlet {
+    public interface ISpeechletWithContextAsync {
         Task<SpeechletResponse> OnIntentAsync(IntentRequest intentRequest, Session session, Context context);
         Task<SpeechletResponse> OnLaunchAsync(LaunchRequest launchRequest, Session session, Context context);
         Task OnSessionStartedAsync(SessionStartedRequest sessionStartedRequest, Session session, Context context);

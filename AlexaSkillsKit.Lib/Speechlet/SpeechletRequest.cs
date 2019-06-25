@@ -4,10 +4,8 @@ using AlexaSkillsKit.Helpers;
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace AlexaSkillsKit.Speechlet
-{
-    public abstract class SpeechletRequest
-    {
+namespace AlexaSkillsKit.Speechlet {
+    public abstract class SpeechletRequest {
         protected SpeechletRequest(JObject json) {
             RequestId = json.Value<string>("requestId");
             Timestamp = DateTimeHelpers.FromAlexaTimestamp(json);

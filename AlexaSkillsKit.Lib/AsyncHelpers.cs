@@ -5,10 +5,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AlexaSkillsKit
-{
-    public static class AsyncHelpers
-    {
+namespace AlexaSkillsKit {
+    public static class AsyncHelpers {
         /// <summary>
         /// Execute's an async Task<T> method which has a void return value synchronously
         /// </summary>
@@ -20,12 +18,10 @@ namespace AlexaSkillsKit
             synch.Post(async _ => {
                 try {
                     await task();
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     synch.InnerException = e;
                     throw;
-                }
-                finally {
+                } finally {
                     synch.EndMessageLoop();
                 }
             }, null);
@@ -48,12 +44,10 @@ namespace AlexaSkillsKit
             synch.Post(async _ => {
                 try {
                     ret = await task();
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     synch.InnerException = e;
                     throw;
-                }
-                finally {
+                } finally {
                     synch.EndMessageLoop();
                 }
             }, null);
@@ -62,8 +56,7 @@ namespace AlexaSkillsKit
             return ret;
         }
 
-        private class ExclusiveSynchronizationContext : SynchronizationContext
-        {
+        private class ExclusiveSynchronizationContext : SynchronizationContext {
             private bool done;
             public Exception InnerException { get; set; }
             readonly AutoResetEvent workItemsWaiting = new AutoResetEvent(false);
@@ -99,8 +92,7 @@ namespace AlexaSkillsKit
                     {
                             throw new AggregateException("AsyncHelpers.Run method threw an exception.", InnerException);
                         }
-                    }
-                    else {
+                    } else {
                         workItemsWaiting.WaitOne();
                     }
                 }

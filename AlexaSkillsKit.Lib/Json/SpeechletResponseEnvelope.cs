@@ -1,15 +1,13 @@
 ﻿// Copyright 2018 Stefan Negritoiu (FreeBusy) and contributors. See LICENSE file for more information.
 
-using System.Collections.Generic;
-using Newtonsoft.Json;
 using AlexaSkillsKit.Speechlet;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
-namespace AlexaSkillsKit.Json
-{
-    public class SpeechletResponseEnvelope
-    {
+namespace AlexaSkillsKit.Json {
+    public class SpeechletResponseEnvelope {
         private static JsonSerializerSettings _serializerSettings = new JsonSerializerSettings() {
-            NullValueHandling = NullValueHandling.Ignore, 
+            NullValueHandling = NullValueHandling.Ignore,
             ContractResolver = new CamelCasePropertyNamesExceptDictionaryKeysContractResolver(),
             Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() }
         };

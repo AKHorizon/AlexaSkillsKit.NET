@@ -1,15 +1,13 @@
 ﻿// Copyright 2018 Stefan Negritoiu (FreeBusy) and contributors. See LICENSE file for more information.
 
-using System;
+using AlexaSkillsKit.Authentication;
+using AlexaSkillsKit.Speechlet;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using AlexaSkillsKit.Speechlet;
-using AlexaSkillsKit.Authentication;
+using System;
 
-namespace AlexaSkillsKit.Json
-{
-    public class SpeechletRequestEnvelope
-    {
+namespace AlexaSkillsKit.Json {
+    public class SpeechletRequestEnvelope {
         public static SpeechletRequestParser RequestParser { get; } = new SpeechletRequestParser();
 
         static SpeechletRequestEnvelope() {

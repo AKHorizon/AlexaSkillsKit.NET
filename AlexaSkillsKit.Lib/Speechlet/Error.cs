@@ -3,14 +3,12 @@
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace AlexaSkillsKit.Speechlet
-{
+namespace AlexaSkillsKit.Speechlet {
     /// <summary>
     /// https://developer.amazon.com/docs/custom-skills/audioplayer-interface-reference.html#playbackfailed
     /// https://developer.amazon.com/docs/custom-skills/audioplayer-interface-reference.html#system-exceptionencountered
     /// </summary>
-    public class Error
-    {
+    public class Error {
         public static Error FromJson(JObject json) {
             if (json == null) return null;
 
@@ -32,8 +30,7 @@ namespace AlexaSkillsKit.Speechlet
             private set;
         }
 
-        public enum TypeEnum
-        {
+        public enum TypeEnum {
             NONE = 0, // default in case parsing fails
             INVALID_RESPONSE,
             DEVICE_COMMUNICATION_ERROR,
