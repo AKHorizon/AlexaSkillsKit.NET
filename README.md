@@ -1,4 +1,4 @@
-# This is fork made to target the .NET Standard 2.0 framework.
+# This fork is made to target the .NET Standard 2.0 framework.
 
 # AlexaSkillsKit.NET
 .NET library to write Alexa skills that's interface-compatible with [Amazon's AlexaSkillsKit for Java](https://github.com/amzn/alexa-skills-kit-java) and matches that functionality:
